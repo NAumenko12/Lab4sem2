@@ -1,6 +1,6 @@
 #include "func.h"
 
-double bisectionMethod(double a, double b, double epsilon) {
+double bisection(double a, double b, double epsilon) {
     printMethodHeader("Метод половинного деления", a, b);
     int n {};
     double middle = (a + b) / 2.0;
@@ -26,7 +26,7 @@ double bisectionMethod(double a, double b, double epsilon) {
     return middle;
 }
 
-double newtonMethod(double x0, double epsilon) {
+double newton(double x0, double epsilon) {
     printMethodHeader("Метод Ньютона", x0);
     int n {};
     double x = x0;
@@ -48,7 +48,7 @@ double newtonMethod(double x0, double epsilon) {
     return root;
 }
 
-double simpleIterationMethod(double x0, double epsilon, bool isPositive) {
+double iterations(double x0, double epsilon, bool isPositive) {
     printMethodHeader("Метод простых итераций", x0);
     int n {};
     double x = x0;
@@ -81,9 +81,9 @@ vector<double> solveRoot(const string& title, double a, double b, double x0, boo
     cout << "Проверка знаков: f(a) = " << f(a) << ", f(b) = " << f(b) << endl;
     cout << "Для Ньютона: f(x0) * f''(x0) = " << f(x0) * ddf(x0) << endl;
     vector<double> roots;
-    roots.push_back(bisectionMethod(a, b, epsilon));
-    roots.push_back(newtonMethod(x0, epsilon));
-    roots.push_back(simpleIterationMethod(x0, epsilon, isPositive));
+    roots.push_back(bisection(a, b, epsilon));
+    roots.push_back(newton(x0, epsilon));
+    roots.push_back(iterations(x0, epsilon, isPositive));
     return roots;
 }
 

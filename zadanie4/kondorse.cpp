@@ -19,7 +19,6 @@ bool firstHigher(const string& a, const string& b, const vector<string>& ranking
 bool beatsInPair(const string& a, const string& b, const vector<vector<string>>& ballots) {
     int aVotes {};
     int bVotes {};
-
     for (const vector<string>& ballot : ballots) {
         if (firstHigher(a, b, ballot)) {
             ++aVotes;
@@ -27,7 +26,6 @@ bool beatsInPair(const string& a, const string& b, const vector<vector<string>>&
             ++bVotes;
         }
     }
-
     return aVotes > bVotes;
 }
 

@@ -12,6 +12,5 @@ int main() {
     pair<string, int> bord = bordWin(candidates, ballots);
     string kondorse = kondorWin(candidates, ballots);
     printResult(bord, kondorse);
-
     return 0;
 }

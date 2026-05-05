@@ -26,7 +26,6 @@ vector<int> Fibonachi(int a, int b, char operation, int m, vector<int> sequence,
         sequence.push_back(val);
         ++n;
     }
-
     return result;
 }
 
